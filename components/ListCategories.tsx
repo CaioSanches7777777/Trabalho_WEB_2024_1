@@ -2,18 +2,18 @@
 
 import React, {useContext, useState} from "react";
 import Select from "react-dropdown-select";
-import { CategoryContext, CategoryData } from "@/context/CategoryContext";
+import { CategoryContext, Category } from "@/context/CategoryContext";
 
 const ListCategories = ({}) => {
     const { categories } = useContext(CategoryContext);
 
     return (
         <div className="flex flex-col  gap-4 sm:items-center sm:justify-between mb-8 sm:mb-8">
-            <h2 className="text-2xl font-semibold">Minhas tarefas</h2>
+            <h2 className="text-2xl font-semibold">Categorias</h2>
 
             <div className="flex">
             <ul className="max-w-md space-y-1 text-gray-500 list-inside">
-                {categories.map((category:CategoryData, index:number) => (
+                {categories.map((category:Category, index:number) => (
                     
                     <li className={`flex flex-center gap-2 mb-2 `} key={index}>
                         

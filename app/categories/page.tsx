@@ -1,4 +1,4 @@
-import { CategoryContext } from "@/context/CategoryContext";
+import { CategoryContext, CategoryContextProvider } from "@/context/CategoryContext";
 import { useContext } from "react";
 import AddCategory from "@/components/AddCategory";
 import ListCategories from "@/components/ListCategories"
@@ -6,8 +6,9 @@ const Categories = ({}) => {
     
     return(
         <main className="h-screen">
-            
-            <AddCategory></AddCategory>
+            <CategoryContextProvider>
+                <AddCategory/>
+            </CategoryContextProvider>
         </main>
     );
 }

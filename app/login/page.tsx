@@ -19,7 +19,7 @@ const Login = async ({}) => {
                 <input {...register('username')} type="text" name="username" id="username" placeholder="username"></input>
 
                 <label htmlFor="password">Senha: </label>
-                <input {...register('password')} type="text" name="password" id="password" placeholder="password"></input>
+                <input {...register('password')} type="password" name="password" id="password" placeholder="password"></input>
 
                 <input type="submit" value="Acessar" />
             </form>
