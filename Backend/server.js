@@ -2,18 +2,9 @@ import { build } from './app.js';
 import dotenv from 'dotenv';
 import closeWithGrace from 'close-with-grace';
 import { options } from './app.js';
-/*
-dotenv.config();
 
-const options = { };
-
-options.logger = process.stdout.isTTY ? { transport : { target: 'pino-pretty'} } : true;
-options.jwt_secret = process.env.JWT_SECRET || 'Abcd@1234';
-*/
 const server = await build(options);
 
-//const port = process.env.PORT || '3000';
-//const host = process.env.HOST || '127.0.0.1';
 
 await server.listen({port: options.port, host: options.host});
 

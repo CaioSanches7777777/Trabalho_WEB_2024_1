@@ -1,4 +1,4 @@
-/** @type{import('fastify').FastifyPluginAsync<>} */
+
 import createError from '@fastify/error';
 import { config } from 'dotenv';
 export default async function products(app, options) {
@@ -10,11 +10,11 @@ export default async function products(app, options) {
         {
             config: {
                 logMe: true,
-                //requireAuthentication: true
+                
             }
         }, 
         async (request, reply) => {
-            //request.log.info(products);
+            
         return await products.find().toArray();
     });
 

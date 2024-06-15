@@ -8,7 +8,7 @@ import { Category } from '@/context/CategoryContext';
 const ListProduct = ({}) => {
   const [productList, setProductList] = useState<Product[]>([]);
   const [categoryList, setCategoryList] = useState<Category[]>([]);
-  //const [isLoading, setLoading] = useState(true);
+ 
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ListProduct = ({}) => {
       .then((res) => res.json())
       .then((data) => {
         setProductList(data);
-        //setLoading(false);
+        
       });
     
     fetch('http://localhost:5000/categories',{

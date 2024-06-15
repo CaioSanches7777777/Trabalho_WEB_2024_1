@@ -1,4 +1,4 @@
-/** @type{import('fastify').FastifyPluginAsync<>} */
+
 
 import products from './products.js';
 
@@ -9,10 +9,10 @@ export default async function categories(app, options) {
 
     app.get('/categories', 
         {   
-            //para exigir autenticação
+           
             config: {
                 logMe: true,
-                //requireAuthentication: true
+                
             }
         }, 
         async (request, reply) => {
@@ -41,12 +41,7 @@ export default async function categories(app, options) {
         request.log.info(`Including category ${category.name}.`);
         return reply.code(201).send();
     });
-    /*
-    app.get('/categories/:id/products', async (request, reply) => {
-        app.log.info('Categoria requisitada> ' + request.params.id);
-        return {};
-    });
-    */
+   
     app.get('/categories/:id/products', async (request, reply) => {
         let id = request.params.id;
         let category = await categories.findOne({_id: new app.mongo.ObjectId(id)});

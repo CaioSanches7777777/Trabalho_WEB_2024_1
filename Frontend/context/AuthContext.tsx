@@ -28,18 +28,7 @@ export default function AuthProvider( {children}: {children: React.ReactNode}){
     const router = useRouter();
     
     async function login({username, password}: SignIdData) {
-        /*
-        let url = 'http://localhost:5000/registerUser/'+username;
-
-        request<UserAuthentication>(url,{
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            referrerPolicy: 'no-referrer',
-            cache: 'no-store'
-        })
-        */
+       
         let {'x-access-token': token} = await request<UserAuthentication>('http://localhost:5000/auth',{
             method: 'POST',
             headers: {
@@ -50,17 +39,10 @@ export default function AuthProvider( {children}: {children: React.ReactNode}){
             cache: 'no-store'
         })
 
-        /*
-        const result = await fetch('http://127.0.0.1:5000/auth',{   //ver se esse é o url correto do backend usado para registrar o usuario
-            method: 'POST',
-            body: JSON.stringify({username, password})
-        });
-        const token = await result.json();
-        */
-
+       
         if(!token) setAuthError('Usuário ou senha inválidos. verifique e tente novamente!');
         else{
-            //cria um cookie
+            
             setCookie(null, 'auth.token', token, { 
                 maxAge: 60 * 60 * 1,
             });

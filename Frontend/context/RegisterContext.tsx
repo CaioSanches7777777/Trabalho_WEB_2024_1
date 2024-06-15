@@ -39,17 +39,11 @@ export default function RegisterProvider( {children}: {children: React.ReactNode
             cache: 'no-store'
         })
 
-        /*
-        const result = await fetch('http://127.0.0.1:5000/auth',{   //ver se esse é o url correto do backend usado para registrar o usuario
-            method: 'POST',
-            body: JSON.stringify({username, password})
-        });
-        const token = await result.json();
-        */
+    
 
         if(!token) setAuthError('Usuário ou senha inválidos. verifique e tente novamente!');
         else{
-            //cria um cookie
+            
             setCookie(undefined, 'auth.token', token, { 
                 maxAge: 60 * 60 * 1,
             });

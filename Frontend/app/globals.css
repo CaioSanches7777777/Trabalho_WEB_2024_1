@@ -10,11 +10,10 @@
     float: right;
     padding: 0px 12px;
     border: 1px solid #ccc;
-    /*width: 30%;*/
+    
     border-left: none;
     height: 300px;
-    /*justify-self: flex-end;
-    margin-right: 10%;*/
+    
     margin-bottom: 40px;
     overflow-wrap: break-word;
     overflow-y: scroll;

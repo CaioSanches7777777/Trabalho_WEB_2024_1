@@ -1,4 +1,4 @@
-"use client"; //talves não precise
+"use client"; 
 
 import { useRouter } from "next/navigation"; 
 

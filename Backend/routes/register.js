@@ -1,4 +1,4 @@
-/** @type{import('fastify').FastifyPluginAsync<>} */
+
 import user from './auth.js';
 
 export default async function register(app, options) {
@@ -12,7 +12,7 @@ export default async function register(app, options) {
                 properties: {
                     id: { type: 'integer' },
                     username: { type: 'string' },
-                    password: { type: 'string' } //criptografar
+                    password: { type: 'string' } 
                 },
                 required: ['username', 'password']
             }

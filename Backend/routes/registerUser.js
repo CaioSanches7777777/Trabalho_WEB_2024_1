@@ -1,4 +1,4 @@
-/** @type{import('fastify').FastifyPluginAsync<>} */
+
 import user from './auth.js';
 
 export default async function registerUser(app, options) {
@@ -13,7 +13,7 @@ export default async function registerUser(app, options) {
             }
         }, 
         async (request, reply) => {
-            //request.log.info(products);
+          
         return await registerUser.find().toArray();
     });
     
@@ -24,7 +24,7 @@ export default async function registerUser(app, options) {
                 properties: {
                     id: { type: 'integer' },
                     username: { type: 'string' },
-                    password: { type: 'string' } //criptografar
+                    password: { type: 'string' } 
                 },
                 required: ['username', 'password']
             }
@@ -43,11 +43,5 @@ export default async function registerUser(app, options) {
         let user = await registerUser.findOne({_id: new app.mongo.ObjectId(id)});
         return user;
     });
-    /*
-    app.get('/registerUser/:username', async (request, reply) => {
-        let name = request.params.name;
-        let user = await registerUser.findOne({username: new app.mongo.String(name)});
-        return user;
-    })
-    */
+    
 }

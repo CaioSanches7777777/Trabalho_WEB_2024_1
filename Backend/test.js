@@ -10,9 +10,9 @@ describe('###Tests for Server Configuration', async(t) => {
             await app.close();
         });
     
-        deepEqual(options.stage,'test'); //'dev' no .env 
+        deepEqual(options.stage,'test'); 
         deepEqual(options.port,'5000');
-        deepEqual(options.host,'127.0.0.1'); //talvez seja '1270.0.0.1'
+        deepEqual(options.host,'127.0.0.1'); 
         deepEqual(options.jwt_secret,'Abcd@1234');
         deepEqual(options.db_url,'mongodb://localhost:27017/dositio');
 
@@ -69,21 +69,3 @@ describe('###Tests for Authenticated routes', async(t) => {
 });
 
 
-/*test('Basic Server', async (t) => {
-    const app = await build();
-
-    t.after(async() => {
-        await app.close();
-    });
-    
-    const response = await app.inject({
-        method: 'GET',
-        url: '/products'
-    });
-
-    assert.strictEqual(response.statusCode, 200);
-    assert.deepEqual(response.json(), [
-        {id: 1, name: 'Tomate', qtd: 20},
-        {id: 2, name: 'Cebola', qtd: 50}
-    ]);
-}); */
